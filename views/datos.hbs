@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Usuario</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/estilos.css">
+</head>
+<body>
+    <h1>Perfil de Usuario</h1>
+    <div class="container">
+        <form action="/profile/update" method="POST">
+            <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" value="{{#if user.nombre}}{{user.nombre}}{{/if}}">
+            </div>
+            <div class="form-group">
+                <label for="password">Contraseña</label>
+                <input type="password" class="form-control" id="password" name="password">
+            </div>
+            <div class="form-group">
+                <label for="anos_experiencia">Años de Experiencia</label>
+                <input type="number" class="form-control" id="anos_experiencia" name="anos_experiencia" value="{{#if user.anos_experiencia}}{{user.anos_experiencia}}{{/if}}">
+            </div>
+            <div class="form-group">
+                <label for="especialidad">Especialidad</label>
+                <input type="text" class="form-control" id="especialidad" name="especialidad" value="{{#if user.especialidad}}{{user.especialidad}}{{/if}}">
+            </div>
+            <button type="submit" class="btn btn-primary">Actualizar</button>
+        </form>
+        <form action="/profile/delete" method="POST" class="mt-4">
+            <button type="submit" class="btn btn-danger">Eliminar Perfil</button>
+        </form>
+    </div>
+</body>
+</html>
